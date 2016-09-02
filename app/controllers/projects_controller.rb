@@ -22,10 +22,9 @@ class ProjectsController < ApplicationController
   # POST /todo_lists
   # POST /todo_lists.json
   def create
-#    @project = Project.new(project_params)
 #    @project.save
 #    redirect_to projects_path
-
+    @project = Project.new(project_params)
     respond_to do |format|
       if @project.save
         format.html { redirect_to @project, notice: 'Project was successfully created.' }
@@ -34,7 +33,7 @@ class ProjectsController < ApplicationController
         format.html { render :new }
         format.json { render json: @project.errors, status: :unprocessable_entity }
       end
-
+    end
   end
 
   # GET /todo_lists/1/edit
