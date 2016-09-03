@@ -1,10 +1,13 @@
-Show HTML
+<p>Show HTML</p>
+<p>Projects:</p>
 <%= @project.id %>| <%= @project.name %>
 <%= link_to "Delete Project", project_path(@project), method: :delete,  data: {confirm: "Are you sure?"}%>
 
+<p>Comments:</p>
 <div >
   <%= render @project.tasks %>
   <div>
     <%= render 'tasks/form' %>
   </div>
 </div>
+

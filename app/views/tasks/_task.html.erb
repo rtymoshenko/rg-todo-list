@@ -1,2 +1,32 @@
-<p><%= task.name %>-Content p tag</p>
-<%= link_to "Delete", project_task_path(@project, task), method: :delete, data: { confirm: "Are you sure?" } %>
+<div>
+  <% if task.status? %>
+    <div>
+      <%= link_to "Mark as Complete", complete_project_task_path(@project, task), method: :patch %>
+    </div>
+
+    <div>
+      <p style="opacity: 0.4;"><strike><%= task.name%></strike></p>
+    </div>
+
+    <div class="trash">
+      <%= link_to "Delete", project_task_path(@project, task), method: :delete, data: { confirm: "Are you sure?" } %>
+    </div>
+
+    <% else %>
+
+    <div>
+      <%= link_to "Mark as Complete", complete_project_task_path(@project, task), method: :patch %>
+    </div>
+
+    <div>
+      <p><%= task.name %></p>
+    </div>
+
+    <div>
+      <%= link_to "Delete", project_task_path(@project, task), method: :delete, data: { confirm: "Are you sure?" } %>
+    </div>
+
+    <% end %>
+
+</div>
+<hr>

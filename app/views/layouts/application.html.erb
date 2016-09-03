@@ -8,7 +8,10 @@
 </head>
 <body>
 
-<%= flash %>
+<%= flash[:success] %>
+<%= flash[:notice] %>
+<%= flash[:errors] %>
+
 <%= yield %>
 
 </body>
