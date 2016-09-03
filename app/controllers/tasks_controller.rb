@@ -1,8 +1,20 @@
 class TasksController < ApplicationController
 
 before_action :find_project
+
   def create
+    binding.pry
     @task = @project.tasks.create(task_params)
+    redirect_to @project
+  end
+
+  def destroy
+    @task = @project.tasks.find(params[:id])
+    if @task.destroy
+      flash[:succss] = "Task is deleted"
+    else
+      flash[:error] = "Task could NOT be deleted."
+    end
     redirect_to @project
   end
 
@@ -15,4 +27,5 @@ before_action :find_project
   def task_params
     params[:task].permit(:name, :status, :order)
   end
+
 end
