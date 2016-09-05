@@ -5,7 +5,7 @@
 
 <p>Comments:</p>
 <div >
-  <%= render @project.tasks %>
+  <%= render @project.tasks.order("created_at ASC") %>
   <div>
     <%= render 'tasks/form' %>
   </div>

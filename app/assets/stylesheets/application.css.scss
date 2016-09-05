@@ -12,7 +12,22 @@
  *
  *= require_tree .
  *= require_self
+ *= require font-awesome
  */
+
+// "bootstrap-sprockets" must be imported before "bootstrap" and "bootstrap/variables"
+ @import "bootstrap-sprockets";
+ @import "bootstrap";
+
+
+
+$white_opaque: rgba(250, 250, 250, .3);
+ $dark: #1F7972;
+
+* {
+  box-sizing: border-box;
+}
+
 
 html {
   height: 100%;

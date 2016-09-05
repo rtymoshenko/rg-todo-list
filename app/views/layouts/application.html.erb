@@ -12,7 +12,11 @@
 <%= flash[:notice] %>
 <%= flash[:errors] %>
 
-<%= yield %>
+<div class="container">
+  <div class="center-block col-lg-2" style="float: none;">
+    <%= yield %>
+  </div>
+</div>
 
 </body>
 </html>

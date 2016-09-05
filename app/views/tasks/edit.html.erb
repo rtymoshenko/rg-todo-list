@@ -1,0 +1,6 @@
+Edit task
+
+<%= form_for ([@project, @task]) do |f| %>
+  <%= f.text_field :name, placeholder: "Edit task" %>
+  <%= f.submit %>
+<% end %>

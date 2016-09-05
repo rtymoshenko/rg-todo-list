@@ -9,17 +9,26 @@ class TasksController < ApplicationController
     redirect_to @project
   end
 
+  def edit
+
+  end
+
+  def update
+    @task.update_attribute(:name, params[:task][:name])
+    redirect_to @project
+  end
+
   def destroy
     if @task.destroy
       flash[:success] = "Task is deleted"
     else
-      flash[:error] = "Task could NOT be deleted."
+      flash[:error] = "Task could NOT be deleted"
     end
     redirect_to @project
   end
 
   def complete
-    @task.update_attribute(:status, true)
+    @task.status? ? @task.update_attribute(:status, false) : @task.update_attribute(:status, true)
     redirect_to @project, notice: "Task is completed"
   end
 
@@ -34,7 +43,7 @@ class TasksController < ApplicationController
   end
 
   def task_params
-    params[:task].permit(:name, :status, :order)
+    params[:task].permit(:name)
   end
 
 end
