@@ -8,15 +8,20 @@
 </head>
 <body>
 
-<%= flash[:success] %>
-<%= flash[:notice] %>
-<%= flash[:errors] %>
 
-<div class="container">
-  <div class="center-block col-lg-2" style="float: none;">
-    <%= yield %>
+
+  <%= flash[:success] %>
+  <%= flash[:notice] %>
+  <%= flash[:errors] %>
+
+  <div class="container">
+    <div class="center-block col-lg-2" style="float: none;">
+      <% flash.each do |name, msg| %>
+        <%= content_tag(:div, msg, class: "alert alert-notice") %>
+      <% end %>
+      <%= yield %>
+    </div>
   </div>
-</div>
 
 </body>
 </html>

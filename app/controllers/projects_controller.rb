@@ -1,26 +1,26 @@
 class ProjectsController < ApplicationController
 
   before_action :find_project, only: [:show, :edit, :update, :destroy]
-  # GET /todo_lists
-  # GET /todo_lists.json
+  # GET /projects
+  # GET /projects.json
   def index
     @projects = Project.all
 
   end
 
-  # GET /todo_lists/1
-  # GET /todo_lists/1.json
+  # GET /projects/1
+  # GET /projects/1.json
   def show
 
   end
 
-  # GET /todo_lists/new
+  # GET /projects/new
   def new
     @project = Project.new
   end
 
-  # POST /todo_lists
-  # POST /todo_lists.json
+  # POST /projects
+  # POST /projects.json
   def create
 #    @project.save
 #    redirect_to projects_path
@@ -36,13 +36,13 @@ class ProjectsController < ApplicationController
     end
   end
 
-  # GET /todo_lists/1/edit
+  # GET /projects/1/edit
   def edit
 
   end
 
-  # PATCH/PUT /todo_lists/1
-  # PATCH/PUT /todo_lists/1.json
+  # PATCH/PUT /projects/1
+  # PATCH/PUT /projects/1.json
   def update
 =begin
     @project.update(project_params)
@@ -60,8 +60,8 @@ class ProjectsController < ApplicationController
 
   end
 
-  # DELETE /todo_lists/1
-  # DELETE /todo_lists/1.json
+  # DELETE /projects/1
+  # DELETE /projects/1.json
   def destroy
     @project.destroy
     respond_to do |format|
