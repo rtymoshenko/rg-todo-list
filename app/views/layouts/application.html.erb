@@ -8,14 +8,30 @@
 </head>
 <body>
 
-
+  <header class="navbar navbar-inverse role="navigation1">
+    <div class="navbar-inner">
+        <nav class="collapse navbar-collapse navbar-ex1-collapse">
+          <% if user_signed_in? %>
+              <ul class="nav navbar-nav navbar-right">
+                <li><%= link_to 'Account', edit_user_registration_path %></li>
+                <li><%= link_to 'Sign out', destroy_user_session_path, method: :delete %></li>
+              </ul>
+            <% else %>
+              <ul class="nav navbar-nav pull-right">
+                <li><%= link_to 'Sign up', new_user_registration_path %></li>
+                <li><%= link_to 'Sign in', new_user_session_path %></li>
+              </ul>
+          <% end %>
+        </nav>
+    </div>
+  </header>
 
   <%= flash[:success] %>
   <%= flash[:notice] %>
   <%= flash[:errors] %>
 
   <div class="container">
-    <div class="center-block col-lg-2" style="float: none;">
+    <div class="center-block col-lg-3" style="float: none;">
       <% flash.each do |name, msg| %>
         <%= content_tag(:div, msg, class: "alert alert-notice") %>
       <% end %>

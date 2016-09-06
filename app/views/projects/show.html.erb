@@ -1,13 +1,14 @@
 <p>Show HTML</p>
 <p>Projects:</p>
 <%= @project.id %>| <%= @project.name %>
-<%= link_to "Delete Project", project_path(@project), method: :delete,  data: {confirm: "Are you sure?"}%>
+<% if @project.user == current_user %>
+  <%= link_to "Delete Project", project_path(@project), method: :delete,  data: {confirm: "Are you sure?"}%>
 
-<p>Comments:</p>
-<div >
-  <%= render @project.tasks.order("created_at ASC") %>
-  <div>
-    <%= render 'tasks/form' %>
+  <p>Comments:</p>
+  <div >
+    <%= render @project.tasks.order("created_at ASC") %>
+    <div>
+      <%= render 'tasks/form' %>
+    </div>
   </div>
-</div>
-
+<% end %>

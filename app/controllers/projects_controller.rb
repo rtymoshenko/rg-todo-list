@@ -1,6 +1,7 @@
 class ProjectsController < ApplicationController
 
   before_action :find_project, only: [:show, :edit, :update, :destroy]
+  before_filter :authenticate_user!, except: [:show, :index]
   # GET /projects
   # GET /projects.json
   def index
@@ -16,7 +17,8 @@ class ProjectsController < ApplicationController
 
   # GET /projects/new
   def new
-    @project = Project.new
+    # @project = Project.new
+    @project = current_user.projects.build
   end
 
   # POST /projects
@@ -24,7 +26,8 @@ class ProjectsController < ApplicationController
   def create
 #    @project.save
 #    redirect_to projects_path
-    @project = Project.new(project_params)
+#    @project = Project.new(project_params)
+    @project = current_user.projects.build(project_params)
     respond_to do |format|
       if @project.save
         format.html { redirect_to @project, notice: 'Project was successfully created.' }

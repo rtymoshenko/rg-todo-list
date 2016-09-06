@@ -1,9 +1,11 @@
 Index.html
 <br><br>
 <% @projects.each do |p| %>
+  <% if p.user == current_user %>
   <div>
     <%= p.id %>
     <%= p.name %>
   </div>
+  <% end %>
 <% end %>
 
