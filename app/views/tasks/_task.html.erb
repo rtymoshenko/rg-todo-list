@@ -1,48 +1,46 @@
-<div>
+<div class=" clearfix hover-colorize">
   <% if task.status? %>
-    <div>
-      <%= link_to complete_project_task_path(@project, task), method: :patch do %>
+    <div class="col-lg-1">
+      <%= link_to complete_project_task_path(task.project, task), method: :patch do %>
         <i style="opacity:0.4;" class="fa fa-check-square" ></i>
       <% end %>
     </div>
 
-    <div>
+    <div class="col-lg-9">
       <p style="opacity: 0.4;"><strike><%= task.name %></strike></p>
     </div>
 
-    <div>
-      <%= link_to edit_project_task_path(@project, task) do %>
-        <i class="fa fa-pencil"></i>
+    <div class="col-lg-2 text-center">
+      <i class="fa fa-sort">|</i>
+      <%= link_to edit_project_task_path(task.project.id, task) do %>
+        <i class="fa fa-pencil">|</i>
       <% end %>
-    </div>
 
-    <div class="trash">
-      <%= link_to project_task_path(@project, task), method: :delete, data: { confirm: "Are you sure?" } do %>
+      <%= link_to project_task_path(task.project.id, task), method: :delete, data: { confirm: "Are you sure?" } do %>
         <i class="fa fa-times"></i>
       <% end %>
     </div>
 
     <% else %>
 
-    <div>
-      <%= link_to complete_project_task_path(@project, task), method: :patch do %>
+    <div class="col-lg-1">
+      <%= link_to complete_project_task_path(task.project.id, task), method: :patch do %>
         <i class="fa fa-square"></i>
       <% end %>
     </div>
 
 
-    <div>
+    <div class="col-lg-9">
       <p><%= task.name %></p>
     </div>
 
-    <div>
-      <%= link_to edit_project_task_path(@project, task) do %>
+    <div class="col-lg-2 text-center">
+      <i class="fa fa-sort"></i>
+      <%= link_to edit_project_task_path(task.project.id, task) do %>
         <i class="fa fa-pencil" ></i>
       <% end %>
-    </div>
 
-    <div>
-      <%= link_to project_task_path(@project, task), method: :delete, data: { confirm: "Are you sure?" } do %>
+      <%= link_to project_task_path(task.project.id, task), method: :delete, data: { confirm: "Are you sure?" } do %>
         <i class="fa fa-times"></i>
       <% end %>
     </div>

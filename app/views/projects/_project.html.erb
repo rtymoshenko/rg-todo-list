@@ -1,0 +1,47 @@
+ <!-- project form -->
+<div class="container shadow">
+  <div class="row clearfix blue-gradient project-header raised outlined">
+
+    <div class="calender col-lg-1 ">
+      <i class="fa fa-calendar"></i>
+    </div>
+
+    <div class="project_title col-lg-9">
+      <%= form_for project, remote: true do |f| %>
+          <%= f.label "#{project.name}", class: 'label_title' %>
+          <%= f.text_field :name, class: 'input_title' %>
+      <% end %>
+    </div>
+
+    <div class="col-lg-2 text-right">
+      <%= link_to  project, class: "edit-project" do %>
+        <i class='fa fa-pencil'></i>
+      <% end %>
+      |
+      <%= link_to project, method: :delete, data: { confirm: 'Are you sure?'} do %>
+        <i class='fa fa-trash'>N</i>
+      <% end %>
+      |
+    <%= link_to project, method: :delete, data: { confirm: 'Are you sure?'}, remote: true, class: "delete-project" do %>
+      <i class='fa fa-trash'>Y</i>
+    <% end %>
+    </div>
+  </div>
+
+ <!-- add task form for a project -->
+  <div class="row">
+    <div class="form ">
+        <%= form_for([project, Task.new], remote: true, html: { class: "task-form" } ) do |f|%>
+          <i class="fa fa-plus col-lg-1 green-gradient-symbol"></i>
+          <%= f.text_field :name, placeholder: 'Start typing here to create a task...', class: "col-xs-9" %>
+          <%= f.submit 'Add task', class: "green-gradient col-xs-2" %>
+        <% end %>
+    </div>
+  </div>
+ <!-- tasks for project -->
+  <div class="row">
+    <%= render project.tasks.order("created_at ASC") %>
+  </div>
+
+</div>
+

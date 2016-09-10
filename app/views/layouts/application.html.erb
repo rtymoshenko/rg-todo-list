@@ -31,12 +31,12 @@
   <%= flash[:errors] %>
 
   <div class="container">
-    <div class="center-block col-lg-3" style="float: none;">
+    <!-- <div class="center-block col-lg-3" style="float: none;"> -->
       <% flash.each do |name, msg| %>
         <%= content_tag(:div, msg, class: "alert alert-notice") %>
       <% end %>
       <%= yield %>
-    </div>
+    <!-- </div> -->
   </div>
 
 </body>
