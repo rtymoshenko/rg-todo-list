@@ -15,8 +15,8 @@
  */
 
 // "bootstrap-sprockets" must be imported before "bootstrap" and "bootstrap/variables"
- @import "bootstrap-sprockets";
- @import "bootstrap";
+@import "bootstrap-sprockets";
+@import "bootstrap";
 @import "font-awesome";
 
 
@@ -28,8 +28,8 @@ $white_opaque: rgba(250, 250, 250, .3);
 
 
 html {
-  height: 100%;
-  overflow-y: visible;
+  position: relative;
+  min-height: 100%;
 }
 
 body {
@@ -39,6 +39,7 @@ body {
     background:      -o-linear-gradient( 0deg, #D38312 0%, #e0e0d1 60%, #ccd1b3 100%);
     background:         linear-gradient( 0deg, #D38312 0%, #e0e0d1 60%, #ccd1b3 100%);
     font-family: 'Lato', sans-serif;
+    margin-bottom: 120px;
 }
 
 .container {
@@ -122,4 +123,17 @@ body {
   &:hover {
     background-color: #FCFED5;
   }
+}
+
+
+
+footer {
+  position: absolute;
+  bottom: 0px;
+  width: 100%;
+  /* Фиксированная высота футера */
+  height: 120px;
+
+  text-align: center;
+  padding: 60px;
 }

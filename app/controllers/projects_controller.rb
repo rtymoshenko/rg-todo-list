@@ -80,12 +80,8 @@ class ProjectsController < ApplicationController
     def find_project
       begin
         @project = current_user.projects.find(params[:id])
-          binding.pry
       rescue Exception => e
-        @project = nil
-        flash[:notice] = 'Errorssssssssssssssssssss'
-        binding.pry
-        return
+        flash[:notice] = "Project id[#{params[:id]}] is not found"
       end
     end
 
