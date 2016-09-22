@@ -2,6 +2,7 @@ Rails.application.routes.draw do
 
   devise_for :users
   root "projects#index"
+  get 'ancher' => 'projects#ancher'
 
   resources :projects do
     resources :tasks do

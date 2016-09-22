@@ -1,0 +1,3 @@
+alert("Delete Task!")
+
+$('.delete_task').bind('ajax:success', function() {$(this).closest('.row').fadeOut()})

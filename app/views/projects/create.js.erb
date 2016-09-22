@@ -1,3 +1,12 @@
-alert("Add Project!!")
+alert("Project created");
 
-$("<%= escape_javascript(render @project) %>").appendTo("#projects-list");
+add_project = $("<%= escape_javascript(render @project) %>").appendTo("#all-projects");
+add_project.find(".input_project_name").hide();
+
+add_project.find('.edit_project_name').on('click', function(){
+    $(this).parents('.project-header').find('.label_project_name').toggle();
+    $(this).parents('.project-header').find('.input_project_name').toggle();
+
+    return false;
+  });
+

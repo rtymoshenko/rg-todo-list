@@ -1,0 +1,8 @@
+alert("Task checkbox is checked");
+
+$('.complete_project_task').bind('ajax:success', function() {
+  checkbox = $(this).find(".fa");
+  checkbox.attr('style', '');
+  checkbox.removeClass("fa fa-square-o");
+  checkbox.addClass("fa fa-check-square-o");
+});

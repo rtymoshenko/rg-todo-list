@@ -12,7 +12,6 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require turbolinks
 //= require_tree .
 
 
@@ -35,16 +34,24 @@ $(document).ready(function(){
     }
   );
 
+  alert('Project name/task name hide');
+  $(".input_project_name").hide();
+  $(".input_task_name").hide();
 
-
-  $(".input_title").hide();
-
-  $(".edit-project").on('click', function(){
-    $(this).parents('.project-header').find('.label_title').toggle();
-    $(this).parents('.project-header').find('.input_title').toggle();
+  $(".edit_project_name").on('click', function(){
+    $(this).parents('.project-header').find('.label_project_name').toggle("slow");
+    $(this).parents('.project-header').find('.input_project_name').toggle("slow");
+       alert('PPPP');
 
     return false;
   });
 
 
+  $(".edit_task_name").on('click', function(){
+    $(this).parents('.task_background').find('.label_task_name').toggle("slow");
+    $(this).parents('.task_background').find('.input_task_name').toggle("slow");
+       alert('TTT');
+
+    return false;
+  });
 });

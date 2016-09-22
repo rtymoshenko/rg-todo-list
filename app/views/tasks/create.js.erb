@@ -1,0 +1,17 @@
+alert("Create task");
+
+project_div_tag = $('#project_id<%= @project.id %>');
+console.log(project_div_tag);
+add_task = $("<%= escape_javascript(render @task) %>").appendTo(project_div_tag.find("#all-tasks"));
+
+add_task.find(".input_task_name").hide();
+
+console.log(add_task);
+add_task.find('.edit_task_name').on('click', function(){
+  $(this).parents('.task_link').find('.label_task_name').toggle();
+  $(this).parents('.task_link').find('.input_task_name').toggle();
+  return false;
+  });
+
+console.log(project_div_tag.find("#new_task #task_name"));
+project_div_tag.find("#new_task #task_name")[0].value= '';

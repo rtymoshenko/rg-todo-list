@@ -1,6 +1,6 @@
 <h1 align="center"><strong>SIMPLE TODO LIST</strong></h1>
 <h3 align="center">FROM RUBY GARAGE</h3>
-<br><br>
+
 <% @projects.each do |p| %>
   <% if p.user == current_user %>
   <div>
@@ -10,21 +10,14 @@
   <% end %>
 <% end %>
 
-<div id="projects-list">
+<div id="all-projects">
   <%= render @projects %>
 </div>
 
 <br>
 
-<div class="bottom-link" align="center">
-  <%= link_to @project, method: :post, remote: true, id: "add-project", class: "btn btn-lg btn-primary blue-gradient shadow raised" do %>
-    <i class="fa fa-plus"></i>
-    Sasha
-  <% end %>
-</div>
-
-<div class="container" align="center">
-  <%= link_to @project, remote: true , method: :post, class: "btn btn-lg btn-primary" do %>
+<div align="center">
+  <%= link_to @project, remote: true , method: :post, id: "add-project", class: "btn btn-lg btn-primary" do %>
     <i class="fa fa-plus"></i>
       Add TODO List
   <% end %>

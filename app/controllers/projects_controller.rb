@@ -27,7 +27,7 @@ class ProjectsController < ApplicationController
 #    @project.save
 #    redirect_to projects_path
 #    @project = Project.new(project_params)
-    @project = current_user.projects.build(name: "Project_#{Project.last.id + 1}")
+    @project = current_user.projects.build(name: "Project-#{Project.last.id + 1}")
     respond_to do |format|
       if @project.save
         format.html { redirect_to @project, notice: 'Project was successfully created.' }
@@ -56,6 +56,7 @@ class ProjectsController < ApplicationController
       if @project.update(project_params)
         format.html { redirect_to @project, notice: 'Project was successfully updated.' }
         format.json { render :show, status: :ok, location: @project }
+        format.js
       else
         format.html { render :edit }
         format.json { render json: @project.errors, status: :unprocessable_entity }
@@ -67,14 +68,18 @@ class ProjectsController < ApplicationController
   # DELETE /projects/1
   # DELETE /projects/1.json
   def destroy
-    @project.destroy
     respond_to do |format|
-      format.html { redirect_to root_path, notice: 'Project was successfully destroyed.' }
-      format.json { head :no_content }
-      format.js
+      if @project.destroy
+        format.html { redirect_to root_path, notice: 'Project was successfully destroyed.' }
+        format.json { head :no_content }
+        format.js
+      end
     end
   end
 
+  def ancher
+    render 'ancher'
+  end
   private
 
     def find_project
