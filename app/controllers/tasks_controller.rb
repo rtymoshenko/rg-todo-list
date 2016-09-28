@@ -87,7 +87,7 @@ class TasksController < ApplicationController
 
   def authenticate_user!
     unless current_user
-      redirect_to new_user_session_path
+      render js: "window.location.pathname='#{new_user_session_path}'"
     end
   end
 

@@ -27,7 +27,8 @@ class ProjectsController < ApplicationController
 #    @project.save
 #    redirect_to projects_path
 #    @project = Project.new(project_params)
-    @project = current_user.projects.build(name: "Project-#{Project.last.id + 1}")
+
+    @project = current_user.projects.build(name: "New Project#")
     respond_to do |format|
       if @project.save
         format.html { redirect_to @project, notice: 'Project was successfully created.' }
@@ -77,9 +78,6 @@ class ProjectsController < ApplicationController
     end
   end
 
-  def ancher
-    render 'ancher'
-  end
   private
 
     def find_project
@@ -96,7 +94,8 @@ class ProjectsController < ApplicationController
 
   def authenticate_user!
     unless current_user
-      redirect_to new_user_session_path
+       render js: "window.location.pathname='#{new_user_session_path}'"
     end
   end
+
 end
