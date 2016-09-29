@@ -20,10 +20,10 @@
 @import "font-awesome";
 
 
-$white_opaque: rgba(250, 250, 250, .9);
- $dark: #1F7972;
+$white_color: white;
+
 * {
-  box-sizing: border-box;
+  box-sizing: border-bcox;
 }
 
 
@@ -33,13 +33,13 @@ html {
 }
 
 body {
-    background: -webkit-linear-gradient( 0deg, #D38312 0%, #e0e0d1 60%, #ccd1b3 100%);
-    background:    -moz-linear-gradient( 0deg, #D38312 0%, #e0e0d1 60%, #ccd1b3 100%);
-    background:     -ms-linear-gradient( 0deg, #D38312 0%, #e0e0d1 60%, #ccd1b3 100%);
-    background:      -o-linear-gradient( 0deg, #D38312 0%, #e0e0d1 60%, #ccd1b3 100%);
-    background:         linear-gradient( 0deg, #D38312 0%, #e0e0d1 60%, #ccd1b3 100%);
-    font-family: 'Lato', sans-serif;
-    margin-bottom: 120px;
+  background: -webkit-linear-gradient( 0deg, #D38312 0%, #e0e0d1 60%, #ccd1b3 100%);
+  background:    -moz-linear-gradient( 0deg, #D38312 0%, #e0e0d1 60%, #ccd1b3 100%);
+  background:     -ms-linear-gradient( 0deg, #D38312 0%, #e0e0d1 60%, #ccd1b3 100%);
+  background:      -o-linear-gradient( 0deg, #D38312 0%, #e0e0d1 60%, #ccd1b3 100%);
+  background:         linear-gradient( 0deg, #D38312 0%, #e0e0d1 60%, #ccd1b3 100%);
+  font-family: 'Lato', sans-serif;
+  margin-bottom: 120px;
 }
 
 .blue-project-background {
@@ -71,7 +71,7 @@ body {
 .container {
   border: 1px solid grey;
   width: 55%;
-  background: white;
+  background: $white_color;
   margin: 0 auto 40px auto;
   border-radius: 0 0 15px 15px;
   padding: 0 0 15px 0;
@@ -87,70 +87,99 @@ body {
   box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.4);
 }
 
-.clearfix:before,
-.clearfix:after {
-    content: " ";
-    display: table;
-}
-
-.clearfix:after {
-    clear: both;
-}
-
-.hover-colorize {
-  &:hover {
-    background-color: #FCFED5;
-  }
-}
-
-.icon-link {
-  color: black;
-  opacity: 0.4
-}
-
 .project-header {
+  height: 45px;
   padding-top: 3px;
   text-align: center;
   font-size: 2.5rem;
+  cursor: pointer;
+  border: 1px solid grey;
   .input_project_name {
     background: none;
     border: 1px solid;
     border-radius: 5px;
-    border-color: white;
+    border-color: $white_color;
   }
   .small-buttons {
-    color: $white_opaque;
+    color: $white_color;
+    opacity: 0.4;
+
+    a {
+      color: $white_color; /* Цвет ссылок */
+      text-decoration: none;
+    }
+    a:visited {
+      color: $white_color; /* Цвет посещенных ссылок */
+     }
+    .hide {
+        display: none;
+      }
   }
+
   .project_title {
     font-size: 2rem;
     padding-top: 3px;
     text-align: left;
-    color: white;
+    color: $white_color;
   }
 }
 
+.task_row {
+  font-size: 1.5rem;
+  border-color: gray;
+  border-bottom: 1px solid;
+  height: 45px;
+  opacity: 0.6;
+  color:  lightgrey; /* Цвет ссылок */
+  text-align: center;
+  .task {
+    text-align: center;
+
+    margin: 0;
+  }
+  a {
+    color: lightgrey; /* Цвет ссылок */
+    text-decoration: none;
+  }
+  a:visited {
+    color: lightgrey; /* Цвет посещенных ссылок */
+   }
+   &:hover {
+     background-color: #FCFED5;
+     cursor: pointer;
+   }
+   .col-xs-1 {
+      padding: 12px;
+      border-right: 4px double;
+   }
+   .col-xs-9 {
+      padding: 7px;
+      border-right: 1px solid;
+   }
+   .col-xs-2 {
+      padding: 7px;
+   }
+}
+
 .form {
+  height: 45px;
   text-align: center;
   padding-top: 10px;
   padding-bottom: 10px;
+  border-bottom: 1px solid grey;
   .green-icon {
     color: #1d5630;
     font-size: 2.3em;
   }
-  .green-button {
-    color: white;
+  .add-task-button {
+    color: $white_color;
     border-radius: 0px 10px 10px 0px;
-    margin: 0;
-  }
-
-}
-
-
-.hover-colorize {
-  &:hover {
-    background-color: #FCFED5;
+    font-size: 1.7rem;
   }
 }
+
+
+
 
 .navbar {
   margin: 0;
@@ -163,18 +192,6 @@ footer {
   height: 120px;
   text-align: center;
   padding: 60px;
-}
-
-.task_link {
-  color:  #cecece; /* Цвет ссылок */
-
-  a {
-    color:  #cecece; /* Цвет ссылок */
-  }
-
-  a:visited {
-    color: #cecece; /* Цвет посещенных ссылок */
-   }
 }
 
 /*flash*/
@@ -205,3 +222,6 @@ footer {
     color: #468847;
     text-align: left;
  }
+.low-margin {
+  margin: 1em;
+}

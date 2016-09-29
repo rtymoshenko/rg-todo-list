@@ -1,12 +1,12 @@
-<div class="clearfix hover-colorize task_link task_background">
+<div class="clearfix hover-colorize task_link task_background task_row">
   <% if task.status? %>
     <div class="col-xs-1">
       <%= link_to complete_project_task_path(task.project, task), method: :patch, remote: true, class: :complete_project_task do %>
-        <i style="opacity:0.4;" class="fa fa-check-square-o" ></i>
+        <i class="fa fa-check-square-o" ></i>
       <% end %>
     </div>
 
-    <div class="col-xs-9">
+    <div class="col-xs-9 task">
       <%= form_for [task.project, task], remote: true do |f| %>
         <%= f.label "#{task.name}", class: 'label_task_name' %>
         <%= f.text_field :name, class: 'input_task_name' %>
@@ -34,7 +34,7 @@
     </div>
 
 
-    <div class="col-xs-9">
+    <div class="col-xs-9 task">
       <p><%= task.name %></p>
     </div>
 
