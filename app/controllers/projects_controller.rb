@@ -12,7 +12,6 @@ class ProjectsController < ApplicationController
   # GET /projects/1
   # GET /projects/1.json
   def show
-    render text: "Show page NOT found for this #{current_user} user", status: 404 unless @project
   end
 
   # GET /projects/new
@@ -81,11 +80,7 @@ class ProjectsController < ApplicationController
   private
 
     def find_project
-      begin
-        @project = current_user.projects.find(params[:id])
-      rescue Exception => e
-        flash[:notice] = "Project id[#{params[:id]}] is not found"
-      end
+      @project = current_user.projects.find(params[:id])
     end
 
   def project_params

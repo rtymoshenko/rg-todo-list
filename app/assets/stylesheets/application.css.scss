@@ -22,10 +22,6 @@
 
 $white_color: white;
 
-* {
-  box-sizing: border-bcox;
-}
-
 
 html {
   position: relative;
@@ -58,6 +54,7 @@ body {
   background:      -o-linear-gradient( #dfdfdf, #cbcbcb );
   background:         linear-gradient( #dfdfdf, #cbcbcb );
 }
+
 .green-gradient {
   background: -webkit-linear-gradient( #509e6a, #1d5630 );
   background:    -moz-linear-gradient( #509e6a, #1d5630 );
@@ -66,8 +63,6 @@ body {
   background:         linear-gradient( #509e6a, #1d5630 );
 }
 
-
-
 .container {
   border: 1px solid grey;
   width: 55%;
@@ -75,16 +70,6 @@ body {
   margin: 0 auto 40px auto;
   border-radius: 0 0 15px 15px;
   padding: 0 0 15px 0;
-}
-
-.row {
-  border: 1px solid green;
-  height: 45px;
-}
-
-.shadow {
-  -webkit-box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.4);
-  box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.4);
 }
 
 .project-header {
@@ -103,17 +88,13 @@ body {
   .small-buttons {
     color: $white_color;
     opacity: 0.4;
-
     a {
-      color: $white_color; /* Цвет ссылок */
+      color: $white_color;
       text-decoration: none;
     }
     a:visited {
-      color: $white_color; /* Цвет посещенных ссылок */
-     }
-    .hide {
-        display: none;
-      }
+      color: $white_color;
+    }
   }
 
   .project_title {
@@ -130,19 +111,17 @@ body {
   border-bottom: 1px solid;
   height: 45px;
   opacity: 0.6;
-  color:  lightgrey; /* Цвет ссылок */
+  color:  lightgrey;
   text-align: center;
   .task {
-    text-align: center;
-
-    margin: 0;
+    text-align: left;
   }
   a {
-    color: lightgrey; /* Цвет ссылок */
+    color: lightgrey;
     text-decoration: none;
   }
   a:visited {
-    color: lightgrey; /* Цвет посещенных ссылок */
+    color: lightgrey;
    }
    &:hover {
      background-color: #FCFED5;
@@ -153,7 +132,7 @@ body {
       border-right: 4px double;
    }
    .col-xs-9 {
-      padding: 7px;
+      padding: 9px;
       border-right: 1px solid;
    }
    .col-xs-2 {
@@ -177,9 +156,6 @@ body {
     font-size: 1.7rem;
   }
 }
-
-
-
 
 .navbar {
   margin: 0;
@@ -222,6 +198,7 @@ footer {
     color: #468847;
     text-align: left;
  }
+
 .low-margin {
   margin: 1em;
 }

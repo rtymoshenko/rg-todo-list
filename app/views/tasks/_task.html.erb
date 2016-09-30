@@ -1,4 +1,4 @@
-<div class="clearfix hover-colorize task_link task_background task_row">
+<div class="task_row">
   <% if task.status? %>
     <div class="col-xs-1">
       <%= link_to complete_project_task_path(task.project, task), method: :patch, remote: true, class: :complete_project_task do %>
@@ -6,26 +6,7 @@
       <% end %>
     </div>
 
-    <div class="col-xs-9 task">
-      <%= form_for [task.project, task], remote: true do |f| %>
-        <%= f.label "#{task.name}", class: 'label_task_name' %>
-        <%= f.text_field :name, class: 'input_task_name' %>
-      <% end %>
-    </div>
-
-    <div class="col-xs-2 text-center">
-      <i class="fa fa-sort">|</i>
-
-      <%= link_to '', class: 'edit_task_name', remote: true do %>
-        <i class="fa fa-pencil">|</i>
-      <% end %>
-
-      <%= link_to project_task_path(task.project.id, task), method: :delete, data: { confirm: "Are you sure?" }, class: :delete_task, remote: true do %>
-        <i class="fa fa-times"></i>
-      <% end %>
-    </div>
-
-    <% else %>
+  <% else %>
 
     <div class="col-xs-1">
       <%= link_to complete_project_task_path(task.project, task), method: :patch, remote: true, class: :complete_project_task do %>
@@ -33,22 +14,25 @@
       <% end %>
     </div>
 
+  <% end %>
 
-    <div class="col-xs-9 task">
-      <p><%= task.name %></p>
-    </div>
-
-    <div class="col-xs-2 text-center">
-      <i class="fa fa-sort"></i>
-      <%= link_to edit_project_task_path(task.project.id, task) do %>
-        <i class="fa fa-pencil" ></i>
-      <% end %>
-
-      <%= link_to project_task_path(task.project.id, task), method: :delete, data: { confirm: "Are you sure?" } do %>
-        <i class="fa fa-times"></i>
-      <% end %>
-    </div>
-
+  <div class="col-xs-9 task">
+    <%= form_for [task.project, task], remote: true do |f| %>
+      <%= f.label "#{task.name}", class: 'label_task_name' %>
+      <%= f.text_field :name, class: 'input_task_name' %>
     <% end %>
+  </div>
+
+  <div class="col-xs-2 text-center hide">
+    <i class="fa fa-sort">|</i>
+
+    <%= link_to '', class: 'edit_task_name', remote: true do %>
+      <i class="fa fa-pencil">|</i>
+    <% end %>
+
+    <%= link_to project_task_path(task.project.id, task), method: :delete, data: { confirm: "Are you sure?" }, class: :delete_task, remote: true do %>
+      <i class="fa fa-times"></i>
+    <% end %>
+  </div>
 
 </div>

@@ -25,33 +25,28 @@ $(document).ready(function(){
     }
   );
 
-  $(".task_wrapper .row").hover(
+  $(".task_row").hover(
     function () {
-      $(this).find(".trash").removeClass("hide");
+      $(this).find(".col-xs-2").removeClass("hide");
     },
     function () {
-      $(this).find(".trash").addClass("hide");
+      $(this).find(".col-xs-2").addClass("hide");
     }
   );
 
-  alert('Project name/task name hide');
   $(".input_project_name").hide();
   $(".input_task_name").hide();
 
   $(".edit_project_name").on('click', function(){
     $(this).parents('.project-header').find('.label_project_name').toggle("slow");
     $(this).parents('.project-header').find('.input_project_name').toggle("slow");
-       alert('PPPP');
-
     return false;
   });
 
 
   $(".edit_task_name").on('click', function(){
-    $(this).parents('.task_background').find('.label_task_name').toggle("slow");
-    $(this).parents('.task_background').find('.input_task_name').toggle("slow");
-       alert('TTT');
-
+    $(this).parents('.task_row').find('.label_task_name').toggle("slow");
+    $(this).parents('.task_row').find('.input_task_name').toggle("slow");
     return false;
   });
 

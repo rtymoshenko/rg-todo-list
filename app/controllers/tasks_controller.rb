@@ -42,7 +42,6 @@ class TasksController < ApplicationController
         format.html { redirect_to root_path }
         format.json { head :no_content }
         format.js
-        binding.pry
       else
         flash[:error] = "Task could NOT be deleted"
       end
@@ -53,14 +52,12 @@ class TasksController < ApplicationController
     respond_to do |format|
       if @task.status?
         if @task.update_attribute(:status, false)
-          binding.pry
           format.html { redirect_to root_path, notice: 'Project was successfully updated.' }
           format.json { render :show, status: :ok, location: @task }
           format.js { render :uncomplete }
         end
       else
         if @task.update_attribute(:status, true)
-          binding.pry
           format.html { redirect_to root_path, notice: 'Project was successfully updated.' }
           format.json { render :show, status: :ok, location: @task }
           format.js { render :complete }
