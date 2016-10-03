@@ -110,18 +110,18 @@ body {
   border-color: gray;
   border-bottom: 1px solid;
   height: 45px;
-  opacity: 0.6;
-  color:  lightgrey;
+
+  color:  grey;
   text-align: center;
   .task {
     text-align: left;
   }
   a {
-    color: lightgrey;
+    color: grey;
     text-decoration: none;
   }
   a:visited {
-    color: lightgrey;
+    color: grey;
    }
    &:hover {
      background-color: #FCFED5;
