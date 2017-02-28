@@ -1,0 +1,43 @@
+ <!-- project form -->
+<div  id="project_id<%= project.id %>" class="container">
+  <div class="blue-project-background project-header">
+
+    <div class="col-xs-1">
+      <i class="fa fa-list-alt"></i>
+    </div>
+
+    <div class="project_title col-xs-9">
+      <%= form_for project, remote: true do |f| %>
+          <%= f.label "#{project.name}", class: 'label_project_name' %>
+          <%= f.text_field :name, class: 'input_project_name' %>
+      <% end %>
+    </div>
+
+    <div class="col-xs-2 text-right small-buttons hide">
+      <%= link_to '', class: "edit_project_name" do %>
+        <i class='fa fa-pencil'></i>
+      <% end %>
+        |
+    <%= link_to project, method: :delete, data: { confirm: 'Are you sure?'}, remote: true, class: "delete-project" do %>
+      <i class='fa fa-trash'></i>
+    <% end %>
+    </div>
+  </div>
+
+ <!-- add task form for a project -->
+  <div class="lightgray-form-gradient">
+    <div class="form">
+        <%= form_for([project, Task.new], html: { class: "task-form" }, remote: true ) do |f| %>
+          <i class="fa fa-plus green-icon col-xs-1"></i>
+          <%= f.text_field :name, placeholder: 'Start typing here to create a task...', class: "col-xs-9" %>
+          <%= f.submit 'Add task', class: "green-gradient add-task-button col-xs-2" %>
+        <% end %>
+    </div>
+  </div>
+ <!-- tasks for project -->
+  <div id="all-tasks">
+    <%= render project.tasks.order("created_at ASC") %>
+  </div>
+
+</div>
+

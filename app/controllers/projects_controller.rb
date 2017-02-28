@@ -79,9 +79,9 @@ class ProjectsController < ApplicationController
 
   private
 
-    def find_project
-      @project = current_user.projects.find(params[:id])
-    end
+  def find_project
+    @project = current_user.projects.find(params[:id])
+  end
 
   def project_params
     params.require(:project).permit(:name)
@@ -89,7 +89,7 @@ class ProjectsController < ApplicationController
 
   def authenticate_user!
     unless current_user
-       render js: "window.location.pathname='#{new_user_session_path}'"
+      render js: "window.location.pathname='#{new_user_session_path}'"
     end
   end
 

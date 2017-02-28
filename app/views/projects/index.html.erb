@@ -1,14 +1,14 @@
 <div id="all-projects">
   <% @projects.order("created_at ASC").each do |p| %>
-    <% if p.user == current_user %>
-        <%= render p %>
-    <% end %>
+      <% if p.user == current_user %>binding.pry
+          <%= render p %>
+      <% end %>
   <% end %>
 </div>
 
 <div align="center">
-  <%= link_to @project, remote: true , method: :post, id: "add-project", class: "btn btn-lg btn-primary" do %>
-    <i class="fa fa-plus"></i>
+  <%= link_to @project, remote: true, method: :post, id: "add-project", class: "btn btn-lg btn-primary" do %>
+      <i class="fa fa-plus"></i>
       Add TODO List
   <% end %>
 </div>
