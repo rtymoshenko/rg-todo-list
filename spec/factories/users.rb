@@ -1,8 +1,10 @@
 # This will guess the User class
 FactoryGirl.define do
   factory :user do
-    id 1
-    email "user1@test.ru"
+    sequence(:id) { |n| n }
+    sequence(:email) { |n| "user#{n}@test.ru" }
     encrypted_password "abcdef1"
+    password "romantrv"
+    password_confirmation "romantrv"
   end
 end

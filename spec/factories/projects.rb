@@ -1,8 +1,8 @@
 FactoryGirl.define do
-  factory :project do |p|
-    p.sequence(:id) { |id| id }
-    p.sequence(:name) { |n| "MyProject##{n}" }
-    user_id 1
+  factory :project do |f|
+    f.sequence(:id) { |id| id }
+    f.sequence(:name) { |n| "MyProject##{n}" }
+    f.user_id 1
   end
 end
 
