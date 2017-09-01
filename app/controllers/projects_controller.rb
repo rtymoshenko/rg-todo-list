@@ -1,7 +1,7 @@
 class ProjectsController < ApplicationController
 
   before_action :find_project, only: [:show, :edit, :update, :destroy]
-  before_filter :authenticate_user!, except: [:show, :index]
+  before_filter :authenticate_user!
   # GET /projects
   # GET /projects.json
   def index
@@ -85,12 +85,6 @@ class ProjectsController < ApplicationController
 
   def project_params
     params.require(:project).permit(:name)
-  end
-
-  def authenticate_user!
-    unless current_user
-      render js: "window.location.pathname='#{new_user_session_path}'"
-    end
   end
 
 end

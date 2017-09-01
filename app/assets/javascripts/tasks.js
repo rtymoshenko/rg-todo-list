@@ -1,28 +1,3 @@
-project_div_tag = $('#project_id<%= @project.id %>');
-console.log(project_div_tag);
-add_task = $("<%= escape_javascript(render @task) %>").appendTo(project_div_tag.find("#all-tasks"));
-
-add_task.hover(
-    function () {
-      $(this).find(".col-xs-2").removeClass("hide");
-    },
-    function () {
-      $(this).find(".col-xs-2").addClass("hide");
-    }
-  );
-
-add_task.find(".input_task_name").hide();
-
-console.log(add_task);
-add_task.find('.edit_task_name').on('click', function(){
-  $(this).parents('.task_row').find('.label_task_name').toggle();
-  $(this).parents('.task_row').find('.input_task_name').toggle();
-  return false;
-  });
-
-console.log(project_div_tag.find("#new_task #task_name"));
-project_div_tag.find("#new_task #task_name")[0].value= '';
-
 var ready, set_positions;
 
 set_positions = function(){
@@ -48,6 +23,7 @@ ready = function () {
     // populate the updated_order array with the new task positions
     $('.task_row').each(function(i){
       console.log(this);
+
       updated_order.push({ id: $(this).data("id"), position: i+1 });
     });
 

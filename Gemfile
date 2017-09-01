@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-ruby '2.3.1'
+ruby '2.2.3'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.7.1'
 # Use SCSS for stylesheets
@@ -24,6 +24,9 @@ gem 'pg'
 gem 'bootstrap-sass', '~> 3.3', '>= 3.3.6'
 gem 'font-awesome-rails', '~> 4.6', '>= 4.6.3.1'
 gem 'devise', '~> 3.5', '>= 3.5.1'
+gem 'date_validator', '~> 0.9.0'
+gem 'client_side_validations'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

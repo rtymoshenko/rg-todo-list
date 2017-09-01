@@ -7,7 +7,7 @@
     </div>
 
     <div class="project_title col-xs-9">
-      <%= form_for project, remote: true do |f| %>
+      <%= form_for project, validate: true, remote: true do |f| %>
           <%= f.label "#{project.name}", class: 'label_project_name' %>
           <%= f.text_field :name, class: 'input_project_name' %>
       <% end %>
@@ -27,7 +27,7 @@
  <!-- add task form for a project -->
   <div class="lightgray-form-gradient">
     <div class="form">
-        <%= form_for([project, Task.new], html: { class: "task-form" }, remote: true ) do |f| %>
+        <%= form_for([project, Task.new], html: { class: "task-form" }, remote: true, validate: true ) do |f| %>
           <i class="fa fa-plus green-icon col-xs-1"></i>
           <%= f.text_field :name, placeholder: 'Start typing here to create a task...', class: "col-xs-9" %>
           <%= f.submit 'Add task', class: "green-gradient add-task-button col-xs-2" %>
@@ -35,8 +35,8 @@
     </div>
   </div>
  <!-- tasks for project -->
-  <div id="all-tasks">
-    <%= render project.tasks.order("created_at ASC") %>
+  <div id="all-tasks" class="sortable">
+    <%= render project.tasks.order("priority") %>
   </div>
 
 </div>

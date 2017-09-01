@@ -105,6 +105,7 @@ body {
   }
 }
 
+
 .task_row {
   font-size: 1.5rem;
   border-color: gray;
@@ -128,15 +129,23 @@ body {
      cursor: pointer;
    }
    .col-xs-1 {
-      padding: 12px;
-      border-right: 4px double;
+     height: 45px;
+     border-right: 4px double;
+     padding-top: 7px;
    }
-   .col-xs-9 {
-      padding: 9px;
-      border-right: 1px solid;
+  .col-xs-2 {
+    height: 45px;
+    padding-top: 7px;
+  }
+   .col-xs-6 {
+     height: 45px;
+
+     padding-top: 7px;
    }
-   .col-xs-2 {
-      padding: 7px;
+   .col-xs-3 {
+     height: 45px;
+     padding-top: 7px;
+     border-right: 1px solid;
    }
 }
 
