@@ -25,7 +25,6 @@ gem 'bootstrap-sass', '~> 3.3', '>= 3.3.6'
 gem 'font-awesome-rails', '~> 4.6', '>= 4.6.3.1'
 gem 'devise', '~> 3.5', '>= 3.5.1'
 gem 'date_validator', '~> 0.9.0'
-gem 'client_side_validations'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

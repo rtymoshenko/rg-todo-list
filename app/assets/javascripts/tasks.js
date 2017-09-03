@@ -12,9 +12,9 @@ ready = function () {
   // call set_positions function
   set_positions();
   // call sortable on our div with the sortable class
-  $('.sortable').sortable();
+  sortable('.sortable');
   // after the order changes
-  $('.sortable').sortable().bind('sortupdate', function(e, ui) {
+  $(sortable('.sortable')).bind('sortupdate', function(e, ui) {
     // array to store new order
     updated_order = []
     // set the updated positions
