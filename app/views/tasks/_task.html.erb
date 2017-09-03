@@ -22,7 +22,7 @@
       </div>
       <div class="col-xs-3 task">
         <%= f.label " #{task.deadline}", class: 'label_task_name' %>
-        <%= f.text_field :deadline, class: 'input_task_name' %>
+        <%= f.date_field :deadline, class: 'input_task_name' %>
         <input type="submit" style="display: none">
       </div>
   <% end %>

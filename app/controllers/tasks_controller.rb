@@ -14,6 +14,7 @@ class TasksController < ApplicationController
       else
         format.html {render :new}
         format.json {render json: @task.errors, status: :unprocessable_entity}
+        format.js { redirect_to root_path, notice: 'Task was NOT successfully created.'}
       end
     end
     # redirect_to @project
