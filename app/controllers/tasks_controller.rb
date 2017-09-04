@@ -10,7 +10,7 @@ class TasksController < ApplicationController
       if @task.save
         format.html {redirect_to root_path, notice: 'Task was successfully created.'}
         format.json {render :show, status: :ok, location: @task}
-        format.js
+        format.js { flash.now[:notice] = "Task is created" }
       else
         format.html {render :new}
         format.json {render json: @task.errors, status: :unprocessable_entity}
@@ -36,7 +36,7 @@ class TasksController < ApplicationController
       if @task.update(task_params)
         format.html {redirect_to root_path, notice: 'Task was successfully updated.'}
         format.json {render :show, status: :ok, location: @task}
-        format.js
+        format.js { flash.now[:notice] = "Task is updated" }
       else
         flash[:error] = "Task could NOT be updated"
       end
@@ -50,7 +50,7 @@ class TasksController < ApplicationController
         flash[:success] = "Task is deleted"
         format.html {redirect_to root_path}
         format.json {head :no_content}
-        format.js
+        format.js { flash.now[:notice] = "Task is deleted" }
       else
         flash[:error] = "Task could NOT be deleted"
       end

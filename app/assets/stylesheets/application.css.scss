@@ -13,15 +13,12 @@
  *= require_tree .
  *= require_self
  */
-
 // "bootstrap-sprockets" must be imported before "bootstrap" and "bootstrap/variables"
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import "font-awesome";
 
-
 $white_color: white;
-
 
 html {
   position: relative;
@@ -29,38 +26,38 @@ html {
 }
 
 body {
-  background: -webkit-linear-gradient( 0deg, #D38312 0%, #e0e0d1 60%, #ccd1b3 100%);
-  background:    -moz-linear-gradient( 0deg, #D38312 0%, #e0e0d1 60%, #ccd1b3 100%);
-  background:     -ms-linear-gradient( 0deg, #D38312 0%, #e0e0d1 60%, #ccd1b3 100%);
-  background:      -o-linear-gradient( 0deg, #D38312 0%, #e0e0d1 60%, #ccd1b3 100%);
-  background:         linear-gradient( 0deg, #D38312 0%, #e0e0d1 60%, #ccd1b3 100%);
+  background: -webkit-linear-gradient(0deg, #D38312 0%, #e0e0d1 60%, #ccd1b3 100%);
+  background: -moz-linear-gradient(0deg, #D38312 0%, #e0e0d1 60%, #ccd1b3 100%);
+  background: -ms-linear-gradient(0deg, #D38312 0%, #e0e0d1 60%, #ccd1b3 100%);
+  background: -o-linear-gradient(0deg, #D38312 0%, #e0e0d1 60%, #ccd1b3 100%);
+  background: linear-gradient(0deg, #D38312 0%, #e0e0d1 60%, #ccd1b3 100%);
   font-family: 'Lato', sans-serif;
   margin-bottom: 120px;
 }
 
 .blue-project-background {
 
-  background: -webkit-linear-gradient( 0deg, #3969b5 0%, #337ab7 100%);
-  background:    -moz-linear-gradient( 0deg, #3969b5 0%, #337ab7 100%);
-  background:     -ms-linear-gradient( 0deg, #3969b5 0%, #337ab7 100%);
-  background:      -o-linear-gradient( 0deg, #3969b5 0%, #337ab7 100%);
-  background:         linear-gradient( 0deg, #3969b5 0%, #337ab7 100%);
+  background: -webkit-linear-gradient(0deg, #3969b5 0%, #337ab7 100%);
+  background: -moz-linear-gradient(0deg, #3969b5 0%, #337ab7 100%);
+  background: -ms-linear-gradient(0deg, #3969b5 0%, #337ab7 100%);
+  background: -o-linear-gradient(0deg, #3969b5 0%, #337ab7 100%);
+  background: linear-gradient(0deg, #3969b5 0%, #337ab7 100%);
 }
 
 .lightgray-form-gradient {
-  background: -webkit-linear-gradient( #dfdfdf, #cbcbcb );
-  background:    -moz-linear-gradient( #dfdfdf, #cbcbcb );
-  background:     -ms-linear-gradient( #dfdfdf, #cbcbcb );
-  background:      -o-linear-gradient( #dfdfdf, #cbcbcb );
-  background:         linear-gradient( #dfdfdf, #cbcbcb );
+  background: -webkit-linear-gradient(#dfdfdf, #cbcbcb);
+  background: -moz-linear-gradient(#dfdfdf, #cbcbcb);
+  background: -ms-linear-gradient(#dfdfdf, #cbcbcb);
+  background: -o-linear-gradient(#dfdfdf, #cbcbcb);
+  background: linear-gradient(#dfdfdf, #cbcbcb);
 }
 
 .green-gradient {
-  background: -webkit-linear-gradient( #509e6a, #1d5630 );
-  background:    -moz-linear-gradient( #509e6a, #1d5630 );
-  background:     -ms-linear-gradient( #509e6a, #1d5630 );
-  background:      -o-linear-gradient( #509e6a, #1d5630 );
-  background:         linear-gradient( #509e6a, #1d5630 );
+  background: -webkit-linear-gradient(#509e6a, #1d5630);
+  background: -moz-linear-gradient(#509e6a, #1d5630);
+  background: -ms-linear-gradient(#509e6a, #1d5630);
+  background: -o-linear-gradient(#509e6a, #1d5630);
+  background: linear-gradient(#509e6a, #1d5630);
 }
 
 .container {
@@ -105,14 +102,13 @@ body {
   }
 }
 
-
 .task_row {
   font-size: 1.5rem;
   border-color: gray;
   border-bottom: 1px solid;
   height: 45px;
 
-  color:  grey;
+  color: grey;
   text-align: center;
   .task {
     text-align: left;
@@ -123,30 +119,29 @@ body {
   }
   a:visited {
     color: grey;
-   }
-   &:hover {
-     background-color: #FCFED5;
-     cursor: pointer;
-   }
-   .col-xs-1 {
-     height: 45px;
-     border-right: 4px double;
-     padding-top: 7px;
-   }
+  }
+  &:hover {
+    background-color: #FCFED5;
+    cursor: pointer;
+  }
+  .col-xs-1 {
+    height: 45px;
+    border-right: 4px double;
+    padding-top: 8px;
+  }
   .col-xs-2 {
     height: 45px;
-    padding-top: 7px;
+    padding-top: 8px;
   }
-   .col-xs-6 {
-     height: 45px;
-
-     padding-top: 7px;
-   }
-   .col-xs-3 {
-     height: 45px;
-     padding-top: 7px;
-     border-right: 1px solid;
-   }
+  .col-xs-6 {
+    height: 45px;
+    padding-top: 8px;
+  }
+  .col-xs-3 {
+    height: 45px;
+    padding-top: 8px;
+    border-right: 1px solid;
+  }
 }
 
 .form {
@@ -181,32 +176,32 @@ footer {
 
 /*flash*/
 .alert-error {
-    background-color: #f2dede;
-    border-color: #eed3d7;
-    color: #b94a48;
-    text-align: left;
- }
+  background-color: #f2dede;
+  border-color: #eed3d7;
+  color: #b94a48;
+  text-align: left;
+}
 
 .alert-alert {
-    background-color: #f2dede;
-    border-color: #eed3d7;
-    color: #b94a48;
-    text-align: left;
- }
+  background-color: #f2dede;
+  border-color: #eed3d7;
+  color: #b94a48;
+  text-align: left;
+}
 
 .alert-success {
-    background-color: #dff0d8;
-    border-color: #d6e9c6;
-    color: #468847;
-    text-align: left;
- }
+  background-color: #dff0d8;
+  border-color: #d6e9c6;
+  color: #468847;
+  text-align: left;
+}
 
 .alert-notice {
-    background-color: #dff0d8;
-    border-color: #d6e9c6;
-    color: #468847;
-    text-align: left;
- }
+  background-color: #dff0d8;
+  border-color: #d6e9c6;
+  color: #468847;
+  text-align: left;
+}
 
 .low-margin {
   margin: 1em;

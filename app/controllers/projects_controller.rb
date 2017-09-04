@@ -32,7 +32,7 @@ class ProjectsController < ApplicationController
       if @project.save
         format.html { redirect_to @project, notice: 'Project was successfully created.' }
         format.json { render :show, status: :created, location: @project }
-        format.js
+        format.js { flash.now[:notice] = "Project is created" }
       else
         format.html { render :new }
         format.json { render json: @project.errors, status: :unprocessable_entity }
@@ -56,7 +56,7 @@ class ProjectsController < ApplicationController
       if @project.update(project_params)
         format.html { redirect_to @project, notice: 'Project was successfully updated.' }
         format.json { render :show, status: :ok, location: @project }
-        format.js
+        format.js { flash.now[:notice] = "Project is updated" }
       else
         format.html { render :edit }
         format.json { render json: @project.errors, status: :unprocessable_entity }
@@ -72,7 +72,7 @@ class ProjectsController < ApplicationController
       if @project.destroy
         format.html { redirect_to root_path, notice: 'Project was successfully destroyed.' }
         format.json { head :no_content }
-        format.js
+        format.js { flash.now[:notice] = "Project is deleted" }
       end
     end
   end

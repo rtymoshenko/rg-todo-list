@@ -26,10 +26,11 @@
   </div>
 </header>
 
-
+<div id='top-div'>
 <% flash.each do |name, msg| %>
     <%= content_tag(:div, msg, class: "alert alert-#{name}") %>
 <% end %>
+</div>
 
 <h1 align="center"><strong>SIMPLE TODO LIST</strong></h1>
 <h3 align="center">FROM RUBY GARAGE</h3>

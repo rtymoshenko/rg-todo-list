@@ -3,3 +3,5 @@ label_tag = project_form_tag.find('.label_project_name').toggle('slow');
 
 input_tag = project_form_tag.find('.input_project_name').toggle('slow');
 label_tag[0].textContent = input_tag[0].value;
+
+<%= ajax_flash('#top-div') %>
